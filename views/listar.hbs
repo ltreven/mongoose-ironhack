@@ -1,0 +1,27 @@
+<h1>List</h1>
+
+<form action="/listar" method="GET">
+    <input type="text" placeholder="age" name="age" value=""/>
+    <input type="submit" value="filter" />
+</form>
+
+<div class="container">
+<table width="100%">
+    <tr>
+        <td>Nombre</td>
+        <td>Apellido</td>
+        <td>Edad</td>
+        <td>Change</td>
+        <td>Delete</td>
+    </tr>
+    {{#each data}}
+    <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.surname}}</td>
+        <td>{{this.age}}</td>
+        <td><a href="/edit-student?_id={{this._id}}" class="btn btn-primary">Change</a></td>
+        <td><a href="/delete-student?_id={{this._id}}" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {{/each}}
+</table>
+</div>
